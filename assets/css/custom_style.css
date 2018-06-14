@@ -1,0 +1,9 @@
+.login_wrap{
+	float: left;
+	width: 100%;
+}
+.login_wrap input[type='text'],.login_wrap input[type='password']{
+	float: left;width: 100%;border-radius: 0px;margin-top: 15px; border:0px;border-bottom: 1px solid #ccc;background: transparent;
+}
+.login_wrap p{ margin-top: 15px; font-size: 12px;}
+.login_wrap button{padding:5px 70px;border-radius: 0px;outline: none;border:0px;margin-top: 30px;}
