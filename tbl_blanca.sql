@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 14, 2018 at 05:37 AM
+-- Generation Time: Jun 23, 2018 at 07:25 AM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -21,6 +21,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `tbl_blanca`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_awards`
+--
+
+DROP TABLE IF EXISTS `tbl_awards`;
+CREATE TABLE IF NOT EXISTS `tbl_awards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `place` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_awards`
+--
+
+INSERT INTO `tbl_awards` (`id`, `name`, `place`, `date`) VALUES
+(1, 'Digital Blog Awards', '1st Place', '2015'),
+(2, 'Digital Blog Awards', '2nd Place', '2016'),
+(3, 'Peoples Choise', 'Nominated ', '2018'),
+(4, 'Digital Blog Awards', '1st Place', '20179');
 
 -- --------------------------------------------------------
 
@@ -48,17 +73,16 @@ CREATE TABLE IF NOT EXISTS `tbl_blog` (
 INSERT INTO `tbl_blog` (`id`, `title`, `body`, `user_id`, `cat_id`, `image_path`, `created_at`, `update_at`) VALUES
 (11, 'The standard chunk of Lorem Ipsum used since the ', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 2, 'http://[::1]/blanca/uploads/2.jpg', '2018-06-01 00:00:00', '2018-06-13 00:00:00'),
 (12, 'The standard chunk of those interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 2, 'http://[::1]/blanca/uploads/about-2.png', '2018-06-01 00:00:00', '2018-06-19 00:00:00'),
-(13, 'interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 2, 'http://[::1]/blanca/uploads/blog-img-1.png', '2018-06-01 00:00:00', '2018-06-12 00:00:00'),
+(13, 'interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 4, 'http://[::1]/blanca/uploads/d.jpg', '2018-06-01 00:00:00', 'Jun 14 2018'),
 (2, 'Rackham.The standard chunk of Lorem ', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. ', '2', 3, 'http://[::1]/blanca/uploads/blog-img-1.png', '2018-06-01 00:00:00', '2018-06-11 00:00:00'),
 (7, 'Reproduced below for The those interested.', 'Reproduced below for those interested. reproduced below for those interested.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 3, 'http://[::1]/blanca/uploads/3.jpg', '2018-06-01 00:00:00', '2018-06-18 00:00:00'),
 (9, ' Ipsum used since the 1500s is reproduced below for those interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 4, 'http://[::1]/blanca/uploads/11.jpg', '2018-06-01 00:00:00', '2018-06-27 00:00:00'),
 (10, ' reproduced below for those interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 3, 'http://[::1]/blanca/uploads/blog-img-21.png', '2018-06-01 00:00:00', '2018-06-26 00:00:00'),
 (14, ' reproduced below for those interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 3, 'http://[::1]/blanca/uploads/22.jpg', '2018-06-01 00:00:00', '2018-06-26 00:00:00'),
-(15, 'The standard chunk of Lorem  interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 2, 'http://[::1]/blanca/uploads/1.jpg', '2018-06-02 00:00:00', '2018-06-17 00:00:00'),
-(16, 'The or those interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 2, 'http://[::1]/blanca/uploads/21.jpg', '2018-06-01 00:00:00', '2018-06-25 00:00:00'),
-(17, 'below for those interested.', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.', '1', 2, 'http://[::1]/blanca/uploads/blog-img-2.png', '2018-06-01 00:00:00', '2018-06-03 00:00:00'),
-(27, 'The standard chunk of those interested.2', 'sdfsdfcvb cvbc fx fg ', '1', 1, 'http://[::1]/blanca/uploads/31.jpg', '', 'Jun 13 2018'),
-(28, 'The standard chunk of those interested.2', 'sfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff', '1', 3, 'http://[::1]/blanca/uploads/blog-img-22.png', 'Jun 13 2018', 'Jun 13 2018');
+(15, 'The standard chunk of Lorem  interested.', '\r\n                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>\r\n\r\n                        <p>Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.</p>\r\n\r\n                        <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>', '1', 2, 'http://[::1]/blanca/uploads/1.jpg', '2018-06-02 00:00:00', '2018-06-17 00:00:00'),
+(16, 'The or those interested.', '\r\n                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>\r\n\r\n                        <p>Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.</p>\r\n\r\n                        <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>', '1', 2, 'http://[::1]/blanca/uploads/21.jpg', '2018-06-01 00:00:00', '2018-06-25 00:00:00'),
+(17, 'below for those interested.', '\r\n                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>\r\n\r\n                        <p>Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.</p>\r\n\r\n                        <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>', '1', 2, 'http://[::1]/blanca/uploads/blog-img-2.png', '2018-06-01 00:00:00', '2018-06-03 00:00:00'),
+(28, 'The standard chunk of those interestedbbbbb', '                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae </br>\r\n\r\n                         Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.&amp;amp;lt;/p&amp;amp;gt;\r\n</br>\r\n                         Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, </br> sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate.  ', '1', 3, 'http://[::1]/blanca/uploads/cartoon7.png', 'Jun 13 2018', 'Jun 17 2018');
 
 -- --------------------------------------------------------
 
@@ -73,17 +97,17 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
   `cat_desc` text NOT NULL,
   `cat_create_at` timestamp NOT NULL,
   PRIMARY KEY (`cat_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`cat_id`, `cat_name`, `cat_desc`, `cat_create_at`) VALUES
-(1, 'Winter', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla p', '2018-06-05 18:00:00'),
+(1, 'Winter', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla p', '0000-00-00 00:00:00'),
 (2, 'Love', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla p', '2018-06-20 18:00:00'),
 (3, 'Snow', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla p', '2018-06-19 18:00:00'),
-(4, 'January', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla p', '2018-06-27 18:00:00');
+(4, 'January2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla p', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -93,22 +117,29 @@ INSERT INTO `tbl_category` (`cat_id`, `cat_name`, `cat_desc`, `cat_create_at`) V
 
 DROP TABLE IF EXISTS `tbl_comment`;
 CREATE TABLE IF NOT EXISTS `tbl_comment` (
-  `com_id` int(11) NOT NULL AUTO_INCREMENT,
-  `com_name` varchar(255) NOT NULL,
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_comment_id` int(32) NOT NULL,
+  `comment_sender_name` varchar(255) NOT NULL,
   `com_email` varchar(255) NOT NULL,
-  `com_message` text NOT NULL,
-  `post_id` int(11) NOT NULL,
-  `com_create_at` timestamp NOT NULL,
-  PRIMARY KEY (`com_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `comment` text NOT NULL,
+  `post_id` int(32) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_comment`
 --
 
-INSERT INTO `tbl_comment` (`com_id`, `com_name`, `com_email`, `com_message`, `post_id`, `com_create_at`) VALUES
-(1, 'Nazmul', 'csenazmul96@gmail.com', 'Nice Product', 11, '2018-05-31 18:00:00'),
-(2, 'Bokker', 'bokker@gmail.com', 'Not good product', 12, '2018-06-13 18:00:00');
+INSERT INTO `tbl_comment` (`comment_id`, `parent_comment_id`, `comment_sender_name`, `com_email`, `comment`, `post_id`, `date`) VALUES
+(1, 0, 'Namzul', 'csenazmul96@gmail.com', 'Consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Su spendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus.', 28, '2018-06-01 00:00:00'),
+(2, 1, 'Bokker', 'bokker@gmail.com', 'Consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Su spendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus.', 28, '2018-06-01 00:00:00'),
+(3, 2, 'dsfsdfsdfsdf', 'nadkjf@gmail.com', 'sdfsdf', 28, '23'),
+(4, 0, ' hgfhfh  hkh jg dg df sdf sdf sddf sd sdf ', 'sdfsdf@gmail.com', 'sdvxzc', 28, ''),
+(5, 0, 'Md.Nazmul Hossain', 'csenazmul96@gmail.com', 'This is good product . not bad but some thing is wrong . it not bad', 28, ''),
+(6, 0, 'Md.Nazmul Hossain', 'csenazmul96@gmail.com', 'dfg sdg sdf sdf sdf sdf ', 28, ''),
+(7, 0, 'Md.Nazmul Hossain', 'csenazmul96@gmail.com', 'sdgsd fsd ', 28, ''),
+(8, 0, 'Md Nazmul Hossainf', 'csenazmul96@gmail.com', 'fghfgh fgh fg h', 11, '');
 
 -- --------------------------------------------------------
 
@@ -119,18 +150,25 @@ INSERT INTO `tbl_comment` (`com_id`, `com_name`, `com_email`, `com_message`, `po
 DROP TABLE IF EXISTS `tbl_info`;
 CREATE TABLE IF NOT EXISTS `tbl_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `info` text NOT NULL,
+  `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `date` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_info`
 --
 
-INSERT INTO `tbl_info` (`id`, `info`, `email`) VALUES
-(1, 'HELLO WORLD, MY NAME IS BLANCA\r\n\r\n', 'csenazmul96@gmail.com'),
-(3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna.', 'I’m Amelia Smith');
+INSERT INTO `tbl_info` (`id`, `name`, `email`, `message`, `date`) VALUES
+(32, 'Nazmul', 'csenazmul96@gmail.com', 'sdfsdf', ''),
+(31, 'hhhhhhh', 'kamal@gmail.com', 'sdfsdf', ''),
+(35, 'hhhhhhh', 'kamal@gmail.com', 'xcvmmmmmmmmmmmmmmmmmmmm', ''),
+(33, 'dfgsdf', 'sanazmul5@gmail.com', 'sdafdsf sdf f', ''),
+(29, 'ooooooo', 'kamal@gmail.com', 'sdfsdf', ''),
+(25, 'MD NAZMUL HOSSAIN', 'csenazmul96@gmail.com', 'dfg dfg dfg fd fd dfgdf gdfg dg d aw 34 y5 yy', ''),
+(34, 'Nazmul', 'kamal@gmail.com', 'sdfsd sdf sfd sdf sdf', '');
 
 -- --------------------------------------------------------
 
@@ -144,15 +182,20 @@ CREATE TABLE IF NOT EXISTS `tbl_page` (
   `pag_name` varchar(255) NOT NULL,
   `pag_slug` text NOT NULL,
   `pag_desc` text NOT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `created_at` varchar(255) NOT NULL,
+  `update_at` varchar(255) NOT NULL,
   PRIMARY KEY (`pag_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_page`
 --
 
-INSERT INTO `tbl_page` (`pag_id`, `pag_name`, `pag_slug`, `pag_desc`) VALUES
-(1, 'About', 'Contact me or just say HI', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam.');
+INSERT INTO `tbl_page` (`pag_id`, `pag_name`, `pag_slug`, `pag_desc`, `image_path`, `created_at`, `update_at`) VALUES
+(1, 'Contact', 'Contact me or just say HI', '\r\n                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>\r\n\r\n                        <p>Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.</p>\r\n\r\n                        <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>', 'http://[::1]/blanca/uploads/blog-img-21.png', '2018-06-01 00:00:00', '2018-06-26 00:00:00'),
+(2, 'About me', 'Why I love Winter: A short story', '                        &amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;&amp;lt;/p&amp;gt;\r\n\r\n                        &amp;lt;p&amp;gt;Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.&amp;lt;/p&amp;gt;\r\n\r\n                        &amp;lt;p&amp;gt;Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. &amp;lt;/p&amp;gt;', 'http://[::1]/blanca/uploads/cartoon3.png', '2018-06-01 00:00:00', 'Jun 16 2018'),
+(3, 'Blog', 'Blog page', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;&lt;/p&gt;\r\n\r\n                        &lt;p&gt;Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.&lt;/p&gt;\r\n\r\n                        &lt;p&gt;Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. &lt;/p&gt;', 'http://[::1]/blanca/uploads/sumi5.png', 'sdf', 'Jun 16 2018');
 
 -- --------------------------------------------------------
 
@@ -167,16 +210,16 @@ CREATE TABLE IF NOT EXISTS `tbl_sectionbg` (
   `sec_img` varchar(255) NOT NULL,
   `sec_page` varchar(255) NOT NULL,
   PRIMARY KEY (`sec_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_sectionbg`
 --
 
 INSERT INTO `tbl_sectionbg` (`sec_id`, `sec_name`, `sec_img`, `sec_page`) VALUES
-(1, 'About us', 'about-bg.jpg', 'about'),
-(2, 'Contact page section', 'contact-bg.jpg', 'contact'),
-(3, 'Blog page section ', 'blog-bg.jpg', 'blog');
+(1, 'About me', 'http://[::1]/blanca/uploads/about-bg.jpg', 'about'),
+(2, 'Contact', 'http://[::1]/blanca/uploads/contact-bg.jpg', 'Contact'),
+(3, 'The Story', 'http://[::1]/blanca/uploads/sumi3.png', 'single');
 
 -- --------------------------------------------------------
 
@@ -190,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `tbl_slider` (
   `name` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_slider`
@@ -213,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `tbl_social` (
   `social_class` varchar(255) NOT NULL,
   `social_link` varchar(255) NOT NULL,
   PRIMARY KEY (`social_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_social`
@@ -224,8 +267,7 @@ INSERT INTO `tbl_social` (`social_id`, `social_class`, `social_link`) VALUES
 (2, 'fa fa-linkedin', 'www.facebook.com'),
 (3, 'fa fa-twitter', 'http://www.gmail.com'),
 (4, 'fa fa-facebook', 'http://www.gmail.com'),
-(5, 'fa fa-pinterest', 'http://www.gmail.com'),
-(6, 'fa fa-dribbble', 'www.facebook.com');
+(5, 'fa fa-pinterest', 'http://www.gmail.com');
 
 -- --------------------------------------------------------
 
