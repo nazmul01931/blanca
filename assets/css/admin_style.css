@@ -2,4 +2,5 @@
 .body_content table,.body_content{float: left;width: 100%;}
 .alert-danger{background: red;color: #fff;}
 .login_wrap{float: left;width: 100%;margin-top: 200px;margin-bottom: 104px;}
-
+.my_form{font-size: 12px !important;}
+.custom_nav{background: #007bff;padding: 0px 0px;}

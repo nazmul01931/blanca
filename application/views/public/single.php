@@ -1,20 +1,27 @@
-<?php include('header.php'); ?>
-
+ 
+<?php foreach ($data as $row) {}?>
+ <?php 
+    $section = $this->Default_Model->page_section_query('single');
+     foreach ($section as  $sections) {}
+    if(!empty($sections)): 
+?> 
     <div class="container-fluid">
+       
         <div class="row">
             <div class="col-12">
-                <div class="page-header flex justify-content-center align-items-center" style="background-image: url('images/blog-bg.jpg')">
-                    <h1>The Story</h1>
+                <div class="page-header flex justify-content-center align-items-center" style='background-image: url("<?=  $sections->sec_img ?>" )'>
+                    <h1><?=  $sections->sec_name ?></h1>
                 </div><!-- .page-header -->
             </div><!-- .col -->
         </div><!-- .row -->
-
+    
         <div class="container">
             <div class="row">
                 <div class="offset-lg-9 col-lg-3">
                     <a href="#">
                         <div class="yt-subscribe">
-                            <img src="images/yt-subscribe.png" alt="Youtube Subscribe">
+                            <?php foreach ($message as $value) {} ?>
+                            <img src="<?= $value->image ?>" alt="Youtube Subscribe">
                             <h3>Subscribe</h3>
                             <p>To my Youtube Channel</p>
                         </div><!-- .yt-subscribe -->
@@ -23,36 +30,34 @@
             </div><!-- .row -->
         </div><!-- .container -->
     </div><!-- .hero-section -->
-
+    <?php endif; ?>
     <div class="container single-page blog-page">
         <div class="row">
             <div class="col-12">
                 <div class="content-wrap">
                     <header class="entry-header">
                         <div class="posted-date">
-                            January 30, 2018
+                            <?= date(' M d Y',strtotime($row->created_at))?>
                         </div><!-- .posted-date -->
 
-                        <h2 class="entry-title">10 Tips to create a beautiful party</h2>
+                        <h2 class="entry-title"><?= $row->title?></h2>
 
-                        <div class="tags-links">
-                            <a href="#">#winter</a>
-                            <a href="#">#love</a>
-                            <a href="#">#snow</a>
-                            <a href="#">#january</a>
-                        </div><!-- .tags-links -->
+                         <?php  
+                        echo '<div class="tags-links">';
+                        $post = $this->Blog_Model->category_select();
+                        foreach ($post as $cat) {  ?>
+                              <a href="<?= $cat->cat_id ?>" >#<?= $cat->cat_name ?> </a>  
+                       <?php }
+                        echo '</div>';
+                      ?>
                     </header><!-- .entry-header -->
 
                     <figure class="featured-image">
-                        <img src="images/blog-image.jpg" alt="">
+                        <img src="<?= $row->image_path ?>" alt="">
                     </figure><!-- .featured-image -->
 
                     <div class="entry-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-
-                        <p>Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.</p>
-
-                        <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>
+                       <p><?= $row->body ?></p> 
                     </div><!-- .entry-content -->
 
                     <blockquote class="blockquote-text">
@@ -84,7 +89,7 @@
                         </ul><!-- .post-share -->
 
                         <div class="comments-count order-1 order-lg-3">
-                            <a href="#">2 Comments</a>
+                            <a href="#"><?php echo $this->Default_Model->comment_count($row->id);?> Comment</a>
                         </div><!-- .comments-count -->
                     </footer><!-- .entry-footer -->
                 </div><!-- .content-wrap -->
@@ -94,71 +99,32 @@
                         <h3 class="comments-title">Comments</h3>
 
                         <ol class="comment-list">
-                            <li class="comment">
-                                <div class="comment-body flex justify-content-between">
-                                    <figure class="comment-author-avatar">
-                                        <img src="images/user-1.jpg" alt="user">
-                                    </figure><!-- .comment-author-avatar -->
-
-                                    <div class="comment-wrap">
-                                        <div class="comment-author flex flex-wrap align-items-center">
-                                            <span class="fn">
-                                                <a href="#">Maria Williams</a>
-                                            </span><!-- .fn -->
-
-                                            <span class="comment-meta">
-                                                <a href="#">Jan 29, 2018</a>
-                                            </span><!-- .comment-meta -->
-
-                                            <div class="reply">
-                                                <a href="#">Reply</a>
-                                            </div><!-- .reply -->
-                                        </div><!-- .comment-author -->
-
-                                        <p>Consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Su spendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. </p>
-
-                                    </div><!-- .comment-wrap -->
-                                </div><!-- .comment-body -->
-                            </li><!-- .comment -->
-
-                            <li class="comment">
-                                <div class="comment-body flex justify-content-between">
-                                    <figure class="comment-author-avatar">
-                                        <img src="images/user-2.jpg" alt="user">
-                                    </figure><!-- .comment-author-avatar -->
-
-                                    <div class="comment-wrap">
-                                        <div class="comment-author flex flex-wrap align-items-center">
-                                            <span class="fn">
-                                                <a href="#">Lisa Moore</a>
-                                            </span><!-- .fn -->
-
-                                            <span class="comment-meta">
-                                                <a href="#">Jan 29, 2018</a>
-                                            </span><!-- .comment-meta -->
-
-                                            <div class="reply">
-                                                <a href="#">Reply</a>
-                                            </div><!-- .reply -->
-                                        </div><!-- .comment-author -->
-
-                                        <p>Consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Su spendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. </p>
-
-                                    </div><!-- .comment-wrap -->
-                                </div><!-- .comment-body -->
-                            </li><!-- .comment -->
+                             
+                            
                         </ol><!-- .comment-list -->
                     </div><!-- .post-comments -->
 
+                    
+                    <?php if($error = $this->session->flashdata('feedback')): $class = $this->session->flashdata('feedback_class');?>
+                        <div class="alert alert-dismissible <?php echo $class;  ?>">
+                            <strong><?=  $error ?></strong>    
+                        </div>
+                    <?php endif; ?>
                     <div class="comments-form">
                         <div class="comment-respond">
                             <h3 class="comment-reply-title">Leave a reply</h3>
+                            <?php echo form_open("Details/comments/{$row->id}",['class'=>'comment-form']);?>
 
-                            <form class="comment-form">
-                                <input type="text" placeholder="Name">
-                                <input type="email" placeholder="Email">
-                                <textarea rows="18" cols="6" placeholder="Messages"></textarea>
-                                <input type="submit" value="Read More">
+                                <?php  echo form_input(array('name'=> 'comment_sender_name', 'value'=> set_value('comment_sender_name'),'placeholder'=> 'Name')); ?> 
+                                <?php echo form_error('comment_sender_name');  ?> 
+
+                                <?php  echo form_input(array('name'=> 'com_email', 'value'=> set_value('com_email'),'placeholder'=> 'Email')); ?>
+                                 <?php echo form_error('com_email');  ?> 
+
+                                <?php echo form_textarea(array('name'=> 'comment','rows'=>'18','cols'=>"6",'class'=> 'form-control','value'=> set_value('comment'),'placeholder'=>'Messages'));?>
+                                 <?php echo form_error('comment');  ?> 
+
+                                <?php echo form_submit(array('value'=> 'Submit','name'=>'submit')); ?> 
                             </form><!-- .comment-form -->
                         </div><!-- .comment-respond -->
                     </div><!-- .comments-form -->
@@ -167,4 +133,4 @@
         </div><!-- .row -->
     </div><!-- .container -->
 </div><!-- .outer-container -->
-<?php include('footer.php'); ?>
+ 

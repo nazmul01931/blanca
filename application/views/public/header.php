@@ -66,15 +66,18 @@
                             <span></span>
                             <span></span>
                         </div><!-- .hamburger-menu -->
+                       
 
-                        <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
-                            <li class="current-menu-item"><a href="<?= base_url() ?>">Home</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li> 
-                                <?= anchor('Login','Login') ?>
-                            </li> 
+                        <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center"> 
+                            <li style="<?php if($this->uri->segment(1)==''){echo 'border-bottom:13px solid #2f2f2f;';}?>"> 
+                                <?= anchor(base_url(),'Home') ?></li> 
+                            <li style="<?php if($this->uri->segment(1)=='Blog'){echo 'border-bottom:13px solid #2f2f2f;';}?>"> 
+                                <?= anchor(base_url('Blog'),'Blog') ?></li> 
+                            <li style="<?php if($this->uri->segment(1)=='About'){echo 'border-bottom:13px solid #2f2f2f;';}?>"> <?= anchor(base_url('About'),'About') ?></li> 
+                            <li style="<?php if($this->uri->segment(1)=='Contact'){echo 'border-bottom:13px solid #2f2f2f;';}?>"> 
+                                <?= anchor(base_url('Contact'),'Contact') ?></li> 
+                            <li style="<?php if($this->uri->segment(1)=='Login'){echo 'border-bottom:13px solid #2f2f2f;';}?>"> 
+                                <?= anchor('Login','Login') ?></li> 
                         </ul>
 
                         <div class="header-bar-social d-md-none">

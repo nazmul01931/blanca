@@ -41,6 +41,7 @@ class User extends CI_Controller
 	}
 
 	public function search(){
+
 		$data=array();
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('query','query','required');
@@ -55,6 +56,7 @@ class User extends CI_Controller
 
 
 	public function search_result($query){ 
+		$data = array();
 		$this->load->helper('form');
 		$this->load->library('pagination');
 		$this->load->helper('default'); 
@@ -79,9 +81,15 @@ class User extends CI_Controller
 			'cur_tag_open'	=>'<li class="active"><a>',
 			'cur_tag_close'	=>'</a></li>'  
 		]; 
+		$data['message']=$this->Default_Model->select_query('tbl_users','role',1);  
+		$data['social']=$this->Default_Model->select_('tbl_social');
 		$this->pagination->initialize($config); 
-		$blog=$this->Default_Model->query_search($query,$config['per_page'],$this->uri->segment(4)); 
-		$this->load->view('public/search',compact('blog'));
+		$data['slider']=$this->Default_Model->select_('tbl_slider');
+		$data['blog']=$this->Default_Model->query_search($query,$config['per_page'],$this->uri->segment(4)); 
+		// print_r($data['blog']);exit;
+		$this->load->view('public/header',$data);
+		$this->load->view('public/search',$data);
+		$this->load->view('public/footer',$data);
 	}
 	public function __construct()
 	{

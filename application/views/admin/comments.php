@@ -20,15 +20,14 @@
                     </tr>
                   </thead>
                   <tbody style="font-size: 12px;">
-                    <?php if(count($articles)):
+                    <?php if(count($message)):
                       $count = $this->uri->segment(3,0);
-                      foreach ($articles as $row) :?>
+                      foreach ($message as $row) :?>
                         <tr>
                           <th colspan="1" scope="row"><?= ++$count;?></th> 
-                          <td  colspan="3"><?= $row->title ?></td> 
-                          <td colspan="4"><?= String_length($row->body); ?>... </td> 
-                          <td colspan="4"><?= date('Y M d H:i:s',strtotime($row->created_at)) ?></td> 
-                          <td colspan="2"><img style="height: 80px;width: 100px;" src="<?= $row->image_path ?>"></td> 
+                          <td  colspan="3"><?= $row->name ?></td> 
+                          <td  colspan="3"><?= $row->email ?></td> 
+                          <td colspan="4"><?= String_length($row->message); ?>... </td>  
                           <td colspan="1">
                               <?= anchor("Admin/Edit_blog/{$row->id}",'Edit',['class'=>'btn btn-primary']);?>  
                           </td>

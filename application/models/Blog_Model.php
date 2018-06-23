@@ -82,8 +82,30 @@ class Blog_Model extends CI_Model
 		return $this->db->delete("$table",["$condition"=>$id]);
 	}
 
-	public function default_update_qury($table,$id,$blog){
-		return $this->db->update($table,$blog,['id'=>$id]);
+	public function default_update_qury($table,$id,$blog,$con){
+		return $this->db->update($table,$blog,["$con"=>$id]);
+	}
+ 
+	public function default_Insert_qury($table,$array){   
+		return $this->db ->INSERT("$table", $array);  
+	}
+
+	public function inbox_count(){ 
+		$query = $this->db
+					->select()
+					->from('tbl_info')   
+					->get(); 
+		return $query->num_rows();
+	}
+
+	public function inbox_list($limit, $offset){  
+		$query = $this->db
+					->select()
+					->from('tbl_info') 
+					->limit($limit, $offset)
+					->order_by('id','DESC')
+					->get(); 
+		return $query->result();
 	}
 
 }

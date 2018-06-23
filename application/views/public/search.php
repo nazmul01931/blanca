@@ -1,27 +1,19 @@
-<?php include('header.php'); ?>
  
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="swiper-container hero-slider">
                     <div class="swiper-wrapper">
+                         <?php 
+                           foreach ($slider as $sliders) {?>
+                            
                         <div class="swiper-slide">
                             <div class="hero-content flex justify-content-center align-items-center flex-column">
-                                <img src="<?php echo base_url('images/slider.jpg'); ?>" alt="">
+                                <img src="<?= $sliders->image ?>" alt="">
                             </div><!-- .hero-content -->
                         </div><!-- .swiper-slide -->
 
-                        <div class="swiper-slide">
-                            <div class="hero-content flex justify-content-center align-items-center flex-column">
-                                <img src="<?php echo base_url('images/slider.jpg'); ?>" alt="">
-                            </div><!-- .hero-content -->
-                        </div><!-- .swiper-slide -->
-
-                        <div class="swiper-slide">
-                            <div class="hero-content flex justify-content-center align-items-center flex-column">
-                                <img src="<?php echo base_url('images/slider.jpg'); ?>" alt="">
-                            </div><!-- .hero-content -->
-                        </div><!-- .swiper-slide -->
+                         <?php } ?>
                     </div><!-- .swiper-wrapper -->
 
                     <!-- Add Pagination -->
@@ -43,7 +35,8 @@
                 <div class="offset-lg-9 col-12 col-lg-3">
                     <a href="#">
                         <div class="yt-subscribe">
-                            <img src="images/yt-subscribe.png" alt="Youtube Subscribe">
+                            <?php foreach ($message as $value) {} ?>
+                            <img src="<?= $value->image ?>" alt="Youtube Subscribe">
                             <h3>Subscribe</h3>
                             <p>To my Youtube Channel</p>
                         </div><!-- .yt-subscribe -->
@@ -61,24 +54,23 @@
                         <p>Search Result for: <?= set_value('query');?></p>
                         <header class="entry-header">
                             <div class="posted-date">
-                                <?= 
-                                date($row->created_at)
-                                 //mdate($row->created_at );
-                                ?>
+                                <?= date(' M d Y',strtotime($row->created_at))?> 
                             </div><!-- .posted-date -->
 
                             <h2 class="entry-title"><?= $row->title ?></h2>
 
-                            <div class="tags-links">
-                                <a href="#">#winter</a>
-                                <a href="#">#love</a>
-                                <a href="#">#snow</a>
-                                <a href="#">#january</a>
-                            </div><!-- .tags-links -->
+                             <?php  
+                                echo '<div class="tags-links">';
+                                $post = $this->Blog_Model->category_select();
+                                foreach ($post as $cat) {  ?>
+                                      <a href="<?= $cat->cat_id ?>" >#<?= $cat->cat_name ?> </a>  
+                               <?php }
+                                echo '</div>';
+                              ?>
                         </header><!-- .entry-header -->
                         
                         <figure class="featured-image">
-                            <img src="images/1.jpg" alt="">
+                            <img src="<?= $row->image_path ?>" alt="">
                         </figure><!-- .featured-image -->
 
                         <div class="entry-content">
@@ -117,4 +109,4 @@
 </div><!-- .outer-container -->
 
 
-<?php include('footer.php'); ?>
+ 

@@ -1,22 +1,22 @@
 
 @font-face {
     font-family: 'HelveticaNeueLTPro-Md';
-    src: url('fonts/HelveticaNeueLTPro-Md.eot?#iefix') format('embedded-opentype'),
-    url('fonts/HelveticaNeueLTPro-Md.otf')  format('opentype'),
-    url('fonts/HelveticaNeueLTPro-Md.woff') format('woff'),
-    url('fonts/HelveticaNeueLTPro-Md.ttf')  format('truetype'),
-    url('fonts/HelveticaNeueLTPro-Md.svg#HelveticaNeueLTPro-Md') format('svg');
+    src: url('../fonts/HelveticaNeueLTPro-Md.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeueLTPro-Md.otf')  format('opentype'),
+    url('../fonts/HelveticaNeueLTPro-Md.woff') format('woff'),
+    url('../fonts/HelveticaNeueLTPro-Md.ttf')  format('truetype'),
+    url('../fonts/HelveticaNeueLTPro-Md.svg#HelveticaNeueLTPro-Md') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'BeyondTheMountains';
-    src: url('fonts/BeyondTheMountains.eot?#iefix') format('embedded-opentype'),
-    url('fonts/BeyondTheMountains.otf')  format('opentype'),
-    url('fonts/BeyondTheMountains.woff') format('woff'),
-    url('fonts/BeyondTheMountains.ttf')  format('truetype'),
-    url('fonts/BeyondTheMountains.svg#BeyondTheMountains') format('svg');
+    src: url('../fonts/BeyondTheMountains.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/BeyondTheMountains.otf')  format('opentype'),
+    url('../fonts/BeyondTheMountains.woff') format('woff'),
+    url('../fonts/BeyondTheMountains.ttf')  format('truetype'),
+    url('../fonts/BeyondTheMountains.svg#BeyondTheMountains') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -304,8 +304,7 @@ a:hover, a:active {
 
 .site-navigation ul li a {
     display: block;
-    padding: 4px 0;
-    border-bottom: 2px solid transparent;
+    padding: 0px 0; 
     color: #2f2f2f;
     transition: all 0.35s;
     text-decoration: none;
@@ -313,7 +312,7 @@ a:hover, a:active {
 
 .site-navigation ul li a:hover,
 .site-navigation ul li.current-menu-item a {
-    border-color: #2f2f2f;
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -329,12 +328,31 @@ a:hover, a:active {
     }
 
     .admin_menu ul{float: left;width: 100%;align-content: center!important;margin: 0px;padding: 0px;} 
-    .admin_menu {float: left;width: 100%;}
-    .admin_menu ul li{float: left;
-    padding-bottom: 20px;
+    .admin_menu {float: left;width: 100%;background: transparent;} 
+    .admin_menu ul li{float: left; 
     text-decoration: none;
     list-style: none;
-    padding: 5px 20px;}
+    
+   }
+    .admin_menu ul li a{ font-size: 12px;color: #fff; 
+    text-decoration: none;
+    padding:23px 15px;
+   }
+   .admin_menu ul li span a{ font-size: 12px;color: #fff; 
+    text-decoration: none;
+    padding:23px 15px;
+   }
+   .admin_menu ul li{ font-size: 12px;color: #fff;
+    padding: 15px 0px;
+    line-height: 30px; 
+    text-decoration: none;
+   }
+   .active_admin_menu{ 
+    background: #006DE1;
+   }
+   .admin_menu ul li:hover{background: #006DE1;}
+     .admin_menu ul li:first-child{padding-left: 0px !important;}
+    }
     .blog_add,.blog_add form{float: left;width: 100%;}
     .custom_pagination{float: left;width: 100%;margin: 0;   padding: 0;}
     .custom_pagination ul{float: left;width: 100%;margin: 0;   padding: 0;}
@@ -847,7 +865,7 @@ a:hover, a:active {
 }
 
 .contact-form {
-    margin-top: 90px;
+    margin-top: 30px;
 }
 
 .contact-form input[type="text"],
@@ -864,6 +882,7 @@ a:hover, a:active {
     color: #aeaeae;
     background: #efefef;
     outline: none;
+    border-radius:0px;
 }
 
 .contact-form input[type="submit"] {
@@ -876,6 +895,7 @@ a:hover, a:active {
     color: #fff;
     line-height: 1;
     background: #2f2f2f;
+    border-radius:0px;
 }
 
 @media screen and (min-width: 768px){

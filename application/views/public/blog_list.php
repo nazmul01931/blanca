@@ -1,6 +1,4 @@
-
- 
-    <div class="container-fluid">
+<div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="swiper-container hero-slider">
@@ -36,8 +34,10 @@
                 <div class="offset-lg-9 col-12 col-lg-3">
                     <a href="#">
                         <div class="yt-subscribe">
-                            <img src="images/yt-subscribe.png" alt="Youtube Subscribe">
+                            <?php foreach ($message as $value) {} ?>
+                            <img src="<?= $value->image ?>" alt="Youtube Subscribe">
                             <h3>Subscribe</h3>
+
                             <p>To my Youtube Channel</p>
                         </div><!-- .yt-subscribe -->
                     </a>
@@ -85,8 +85,7 @@
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         </ul><!-- .post-share -->
-
-                        <a class="read-more order-2" href="<?= base_url('Details/single');?>">Read more</a>
+                         <?= anchor("Details/single/{$row->id}",'Read more',['class'=>'read-more order-2']);?>  
 
                         <div class="comments-count order-1 order-lg-3">
                             <a href="#"><?php echo $this->Default_Model->comment_count($row->id);?></a>
