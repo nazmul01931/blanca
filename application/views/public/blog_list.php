@@ -13,7 +13,7 @@
                         </div><!-- .swiper-slide -->
 
                          <?php } ?>
-                    </div><!-- .swiper-wrapper -->
+                    </div><!-- .swiper-wrapper --> 
 
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
